@@ -26,7 +26,8 @@ const PROJ_RADIUS  = 9;
 const PROJ_DAMAGE  = 20;
 const SHOOT_COOLDOWN = 90;
 
-const SHIELD_DURATION    = 600;
+const SHIELD_DURATION    = 900;
+const GRAVITY_DURATION    = 1200;
 const POWERUP_SPAWN_MIN  = 18000; // ms
 const POWERUP_SPAWN_MAX  = 28000; // ms
 const POWERUP_SIZE       = 32;
@@ -359,7 +360,7 @@ function updatePowerUps() {
         const puColor = pu.type === 'triple' ? TRIPLE_COLOR : pu.type === 'gravity' ? GRAVITY_COLOR : pu.type === 'mine' ? MINE_COLOR : POWERUP_COLOR;
         if (pu.type === 'shield') player.shield = SHIELD_DURATION;
         if (pu.type === 'triple') player.tripleShots = 3;
-        if (pu.type === 'gravity') player.gravityFrames = SHIELD_DURATION;
+        if (pu.type === 'gravity') player.gravityFrames = GRAVITY_DURATION;
         if (pu.type === 'mine') player.mineShot = true;
         spawnExplosion(pu.x + POWERUP_SIZE / 2, pu.y + POWERUP_SIZE / 2, puColor);
         powerUps.splice(i, 1);
