@@ -1,0 +1,118 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F2EFE5;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 28px 16px;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.canvas-container {
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0px #000;
+}
+
+#gameCanvas {
+  display: block;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  width: 900px;
+  justify-content: space-between;
+}
+
+.controls-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 3px solid #000;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  font-family: monospace;
+  font-weight: 700;
+  box-shadow: 5px 5px 0px #000;
+  min-width: 280px;
+}
+
+.controls-card.p1 { background: #FFE500; }
+.controls-card.p2 { background: #FF3F3F; }
+
+.controls-label {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.screen-too-small {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .screen-too-small {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: #F2EFE5;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .game-wrapper {
+    display: none;
+  }
+}
+
+.screen-too-small-box {
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0 #000;
+  background: #FFE500;
+  padding: 40px 48px;
+  max-width: 340px;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.screen-too-small-title {
+  font-family: 'Arial Black', Impact, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.screen-too-small-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+kbd {
+  display: inline-block;
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  padding: 1px 6px;
+  border-radius: 2px;
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
